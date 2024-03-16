@@ -1,0 +1,194 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    padding: 8px;
+    margin: 16px;
+    font-size: 16px;
+    font-family:'Roboto', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.95em;
+}
+
+h2{
+    text-align:center;
+  }
+
+li{
+    margin-top: 20px;
+}
+
+/* Create a gap between rows and columns */
+.grid{
+    display: grid;
+    padding: 0;
+    margin: 0 auto;
+    grid-template-columns: 100%;
+    justify-content: space-evenly;
+    row-gap: 10px;
+}
+
+figure{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-height: 100vh;
+    border-radius: 16px;
+    border: 1.2px solid #b3b3b3;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+
+/* Set the font size of the caption to be smaller than the body text to create a hierarchy */
+.container{
+    position: absolute;
+    display: block;
+    background-color: #b3b3b3;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.title{
+    font-size: 12px;
+    font-weight: bold;
+    color: #1f1f1f;
+    font-family: 'Roboto', sans-serif;
+}
+
+.source{
+    font-size: 12px;
+    color: #1f1f1f;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 576px){
+    .container{
+        max-width: 100%;
+    }
+}
+
+
+
+
+/* 772px screen view trigger */
+@media screen and (min-width: 772px){
+    .grid{
+        grid-template-columns: 100% 100%;
+        align-items: center;
+        gap: 10px;
+    }
+
+    figure{
+        border-radius: 50%;
+        margin: 0 auto;
+        padding-top: 100%;
+        display: block;
+    }
+
+    img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 100%;
+        height: auto;
+    }
+
+    .container{
+        height: auto;
+        text-align: center;
+        padding: 12px 24% 6% 24%;
+    }
+
+    figure:nth-child(9){
+        grid-column: 1 / span 2;
+        border-radius: 50%;
+        height: auto;
+    }
+
+    figure:nth-child(9) > .container{
+        padding: 12px 24% 2.4% 24%;
+    }
+}
+
+
+
+
+/* Large screen view trigger */
+@media screen and (min-width: 992px){
+    .grid{
+        grid-template-columns: 100% 100%;
+    }
+
+    .container{
+        padding: 12px;
+    }
+
+    figure{
+        border-radius: 0;
+        position: relative;
+    }
+
+    figure:nth-child(3n){
+        grid-column: 1 / span 2;
+    }
+
+    figure:nth-child(9){
+        border-radius: 0;
+        position: relative;
+        grid-column: 1 / span 2;
+    }
+
+    figure:nth-child(9) > .container{
+        padding: 12px;
+    }
+}
+
+
+
+
+/* Remove the scroll behavior */
+@media (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto;
+    }
+
+}
+
+
+
+/* Create a media query for dark mode */
+@media (prefers-color-scheme: dark){
+    figure{
+        border: 1.2px solid #1f1f1f;
+    }
+
+    .container{
+        background-color: dimgray;
+    }
+
+    .title{
+        color: yellow;
+    }
+
+    .source{
+        color: yellow;
+    }
+}
